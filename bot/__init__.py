@@ -108,9 +108,9 @@ if DATABASE_URL:
         del qbit_opt['_id']
         qbit_options = qbit_opt
     conn.close()
-    BOT_TOKEN = environ.get('BOT_TOKEN', '7315139935:AAHqPKz6i7tc4HzljJzj6WLeHmIro7dizk0')
+    BOT_TOKEN = environ.get('BOT_TOKEN', '')
     bot_id = BOT_TOKEN.split(':', 1)[0]
-    DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://ashupatil62611:DH6bdsudNKz9oSgH@cluster0.zqbv07r.mongodb.net/?retryWrites=true&w=majority')
+    DATABASE_URL = environ.get('DATABASE_URL', '')
 else:
     config_dict = {}
 
@@ -121,14 +121,14 @@ if len(OWNER_ID) == 0:
 else:
     OWNER_ID = int(OWNER_ID)
 
-TELEGRAM_API = environ.get('TELEGRAM_API', '22971260')
+TELEGRAM_API = environ.get('TELEGRAM_API', '')
 if len(TELEGRAM_API) == 0:
     log_error("TELEGRAM_API variable is missing! Exiting now")
     exit(1)
 else:
     TELEGRAM_API = int(TELEGRAM_API)
 
-TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '39b93b45f525642b9c732f43185e4ab0')
+TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '')
 if len(TELEGRAM_HASH) == 0:
     log_error("TELEGRAM_HASH variable is missing! Exiting now")
     exit(1)
