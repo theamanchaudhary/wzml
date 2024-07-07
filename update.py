@@ -27,14 +27,14 @@ try:
 except:
     pass
 
-BOT_TOKEN = environ.get('BOT_TOKEN', '7315139935:AAHqPKz6i7tc4HzljJzj6WLeHmIro7dizk0')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 if len(BOT_TOKEN) == 0:
     log_error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
 
 bot_id = BOT_TOKEN.split(':', 1)[0]
 
-DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://ashupatil62611:DH6bdsudNKz9oSgH@cluster0.zqbv07r.mongodb.net/?retryWrites=true&w=majority')
+DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
     DATABASE_URL = None
 
